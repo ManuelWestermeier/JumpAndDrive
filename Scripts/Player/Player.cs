@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
 		else
 			followTarget.position = jumpPlayer.transform.position;
 		
-		if (transform.position.y < -10)
+		if (followTarget.position.y < -10)
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		}
