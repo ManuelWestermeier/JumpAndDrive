@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
 	public ParticleSystem changeParticles;
 	public ParticleSystem changeDisabledParticles;
 	public CollissionCheckAgainstCarBugs collissionCheckAgainstCarBugs;
+	
+	
 	void Update()
 	{
 		if (Input.GetKeyDown("space"))
@@ -39,6 +41,7 @@ public class Player : MonoBehaviour
 	void ToggleActivePlayer()
 	{
 		PlayChnageParticles();
+		
 		if (!carIsActive)
 		{
 			if (collissionCheckAgainstCarBugs.isColliding)
@@ -59,6 +62,7 @@ public class Player : MonoBehaviour
 
 			jumpPlayer.transform.position = car.transform.position + new Vector3(0, -1, 0);
 		}
+		
 		jumpPlayer.SetActive(jumpPlayerIsActive);
 		car.SetActive(carIsActive);
 	}

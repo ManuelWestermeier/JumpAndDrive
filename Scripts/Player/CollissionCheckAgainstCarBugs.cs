@@ -6,6 +6,7 @@ public class CollissionCheckAgainstCarBugs : MonoBehaviour
 {
 	public bool isColliding = false;
 	Dictionary<GameObject, bool> collisions = new Dictionary<GameObject, bool>();
+	
 	private void OnTriggerEnter2D(Collider2D other)
 	{
 		if (!other.gameObject.CompareTag("DontChangePlayerState")) return;
