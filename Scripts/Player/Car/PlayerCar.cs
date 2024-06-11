@@ -6,10 +6,15 @@ public class PlayerCar : MonoBehaviour
 {
 	public float speed = 10;
 	public float rotationSpeed = 4;
+	public float highSpeed = 2;
+
 	public Rigidbody2D carRb;
 	public Rigidbody2D wheelBackRb;
 	public Rigidbody2D wheelFrontRb;
 	public GroundCheck groundCheck;
+	public UiPlayerController uiPlayerController;
+
+
 	void FixedUpdate()
 	{
 		RotateWheels();
@@ -21,12 +26,16 @@ public class PlayerCar : MonoBehaviour
 
 	void RotateCar()
 	{
-		carRb.MoveRotation(carRb.rotation + Input.GetAxis("Horizontal") * rotationSpeed * Time.fixedDeltaTime * 50);
+		float h = uiPlayerController.h * rotationSpeed * Time.fixedDeltaTime * 50;
+		carRb.MoveRotation(carRb.rotation + h);
 	}
 
 	void RotateWheels()
 	{
-		float h = -Input.GetAxis("Horizontal") * speed * Time.fixedDeltaTime * 100;
+		float h = -uiPlayerController.h * speed * Time.fixedDeltaTime * 100;
+
+		if (groundCheck.highSpeed) h *= highSpeed;
+
 		wheelBackRb.MoveRotation(wheelBackRb.rotation + h);
 		wheelFrontRb.MoveRotation(wheelFrontRb.rotation + h);
 	}

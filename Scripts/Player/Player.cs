@@ -8,12 +8,13 @@ public class Player : MonoBehaviour
 	bool jumpPlayerIsActive = true;
 	public GameObject car;
 	public GameObject jumpPlayer;
+	public GameObject jumpButton;
 	public Transform followTarget;
 	public ParticleSystem changeParticles;
 	public ParticleSystem changeDisabledParticles;
 	public CollissionCheckAgainstCarBugs collissionCheckAgainstCarBugs;
-	
-	
+
+
 	void Update()
 	{
 		if (Input.GetKeyDown("space"))
@@ -23,7 +24,7 @@ public class Player : MonoBehaviour
 			followTarget.position = car.transform.position;
 		else
 			followTarget.position = jumpPlayer.transform.position;
-		
+
 		if (followTarget.position.y < -10)
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -38,17 +39,17 @@ public class Player : MonoBehaviour
 			changeParticles.Play();
 	}
 
-	void ToggleActivePlayer()
+	public void ToggleActivePlayer()
 	{
 		PlayChnageParticles();
-		
+
 		if (!carIsActive)
 		{
 			if (collissionCheckAgainstCarBugs.isColliding)
 			{
 				return;
 			}
-			
+
 			carIsActive = true;
 			jumpPlayerIsActive = false;
 
@@ -62,8 +63,9 @@ public class Player : MonoBehaviour
 
 			jumpPlayer.transform.position = car.transform.position + new Vector3(0, -1, 0);
 		}
-		
+
 		jumpPlayer.SetActive(jumpPlayerIsActive);
 		car.SetActive(carIsActive);
+		jumpButton.SetActive(jumpPlayerIsActive);
 	}
 }
