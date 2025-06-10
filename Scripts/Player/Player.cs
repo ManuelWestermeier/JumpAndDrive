@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,7 +14,6 @@ public class Player : MonoBehaviour
 	public ParticleSystem changeParticles;
 	public ParticleSystem changeDisabledParticles;
 	public CollissionCheckAgainstCarBugs collissionCheckAgainstCarBugs;
-
 
 	void Update()
 	{
@@ -65,6 +65,7 @@ public class Player : MonoBehaviour
 		}
 
 		jumpPlayer.SetActive(jumpPlayerIsActive);
+		
 		car.SetActive(carIsActive);
 		jumpButton.SetActive(jumpPlayerIsActive);
 	}

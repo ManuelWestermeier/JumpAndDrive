@@ -12247,6 +12247,7 @@ MonoBehaviour:
   changeParticles: {fileID: 3806664857387980571}
   changeDisabledParticles: {fileID: 8138643525936056731}
   collissionCheckAgainstCarBugs: {fileID: 5191088572966302531}
+  jumpPlayerAnimator: {fileID: 9216069157065672915}
 --- !u!1001 &3566454933760628152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12314,6 +12315,10 @@ PrefabInstance:
       propertyPath: speed
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 2077137288867671025, guid: 715d8289c8a0677419bbed96c8b8f90d, type: 3}
+      propertyPath: jumpPlayerAnimator
+      value: 
+      objectReference: {fileID: 9216069157065672915}
     - target: {fileID: 2077137288867671025, guid: 715d8289c8a0677419bbed96c8b8f90d, type: 3}
       propertyPath: uiPlayerController
       value: 
@@ -12439,7 +12444,18 @@ MonoBehaviour:
   - {x: 0.4499998, y: -0.00000011920929, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 48998
+  m_InstanceId: 42750
   m_LocalBounds:
     m_Center: {x: 0, y: 0.6999999, z: 0}
     m_Extent: {x: 0.4499998, y: 0.70000005, z: 0}
+--- !u!114 &9216069157065672915 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2969068311962969431, guid: 88097b566ad1fdd489d7ee77465b57aa, type: 3}
+  m_PrefabInstance: {fileID: 6256117773261254020}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb09df9db553ffc4ab6600e3070de9eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
